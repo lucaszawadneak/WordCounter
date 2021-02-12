@@ -1,6 +1,11 @@
 <div id="container">
   <img src="../assets/title.svg" alt="Contador" />
   <p>(meça suas palavras parça)</p>
-  <!-- <app-limit></app-limit> -->
-  <app-counter></app-counter>
+  <app-limit
+    *ngIf="!writing; else counter"
+    (onWrite)="handleWriting()"
+  ></app-limit>
+  <ng-template #counter>
+    <app-counter></app-counter>
+  </ng-template>
 </div>

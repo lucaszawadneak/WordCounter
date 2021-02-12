@@ -4,17 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LimitComponent } from './components/limit/limit.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LimitComponent,
-    CounterComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, LimitComponent, CounterComponent],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

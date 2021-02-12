@@ -1,5 +1,17 @@
 <div id="container">
-  <h1 class="green">0</h1>
-  <p class="green">restante para o limite: 50</p>
-  <textarea name="counter" id="counter"></textarea>
+  <h1 [ngClass]="limitDiff >= 0 ? 'green' : 'red'">
+    {{ count }}
+  </h1>
+  <p class="green" *ngIf="limit === 0">sem limites :)</p>
+  <p class="green" *ngIf="limit !== 0 && limitDiff >= 0">
+    restante para o limite: {{ limitDiff }}
+  </p>
+  <p class="red" *ngIf="limitDiff < 0">
+    ultrapassando o limite: {{ limitDiff * -1 }}
+  </p>
+  <textarea
+    name="counter"
+    id="counter"
+    (keydown)="handleChange($event)"
+  ></textarea>
 </div>

@@ -2,9 +2,9 @@
   <div class="direction-row">
     <div>
       <h4>Limite de palavras</h4>
-      <p>deixe em branco para que não haja limite</p>
+      <p>deixe como zero para que não haja limite</p>
     </div>
-    <input type="numer" />
+    <input type="number" name="limit" [(ngModel)]="limit" />
   </div>
-  <button>Começar</button>
+  <button (click)="handleStart()">Começar</button>
 </div>
