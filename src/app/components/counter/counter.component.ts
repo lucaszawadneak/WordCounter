@@ -16,7 +16,7 @@ export class CounterComponent implements OnInit {
   limitDiff: number = 0;
 
   ngOnInit(): void {
-    this.limit = this.StringConter.limit;
+    this.limit = this.StringConter.getLimit();
     if (this.limit !== 0) {
       this.limitDiff = this.StringConter.handleLimitDif(0);
     }
@@ -25,7 +25,7 @@ export class CounterComponent implements OnInit {
   handleChange(event: any): void {
     //AO APERTAR ESPAÇO, BACKSPACE E LETRA V
     if (event.keyCode == 32 || event.keyCode == 8 || event.keyCode == 86) {
-      this.StringConter.text = event.target.value;
+      this.StringConter.setText(event.target.value);
 
       this.count = this.StringConter.countWords();
       if (this.limit > 0) {

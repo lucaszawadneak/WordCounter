@@ -14,7 +14,7 @@ export class LimitComponent implements OnInit {
   constructor(private StringConter: StringCounterService) {}
 
   ngOnInit(): void {
-    this.limit = this.StringConter.limit;
+    this.limit = this.StringConter.getLimit();
   }
 
   handleStart() {

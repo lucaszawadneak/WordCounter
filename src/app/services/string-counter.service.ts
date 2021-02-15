@@ -13,9 +13,17 @@ export class StringCounterService {
     this.text = data;
   }
 
+  getLimit() {
+    return this.limit;
+  }
+
   setLimit(limit: number): void {
     this.limit = limit;
     console.log('Limite setado para ' + limit);
+  }
+
+  setText(data: string): void {
+    this.text = data;
   }
 
   countWords(): number {
