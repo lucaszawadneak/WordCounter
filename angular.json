@@ -123,7 +123,11 @@
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
-          "options": {}
+          "options": {
+            "baseHref": "https://lucaszawadneak.github.io/wordcounter/",
+            "name": "Lucas Zawadneak",
+            "email": "lucaszawadneak@gmail.com"
+          }
         }
       }
     }
