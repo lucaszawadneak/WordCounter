@@ -36,21 +36,6 @@
 .red {
   color: #cc1414;
 }
-
-/* Chrome, Safari, Edge, Opera */
-#container input::-webkit-outer-spin-button,
-#container input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-  display: none;
-}
-
-/* Firefox */
-#container input[type="number"] {
-  -moz-appearance: textfield;
-  display: none;
-}
-
 @media screen and (max-width: 520px) {
   #container textarea {
     width: 300px;
