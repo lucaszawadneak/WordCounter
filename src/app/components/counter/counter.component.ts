@@ -23,6 +23,7 @@ export class CounterComponent implements OnInit {
   }
 
   handleChange(event: any): void {
+    //AO APERTAR ESPAÇO, BACKSPACE E LETRA V
     if (event.keyCode == 32 || event.keyCode == 8 || event.keyCode == 86) {
       this.StringConter.text = event.target.value;
 

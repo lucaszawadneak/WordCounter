@@ -50,3 +50,10 @@
   -moz-appearance: textfield;
   display: none;
 }
+
+@media screen and (max-width: 520px) {
+  #container textarea {
+    width: 300px;
+    height: 400px;
+  }
+}
