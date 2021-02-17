@@ -17,7 +17,7 @@ export class CounterComponent implements OnInit, OnDestroy {
   count: number = 0;
   limitDiff: number = 0;
 
-  searchEntry: Subject<string> = new Subject<string>();
+  inputEntry$: Subject<string> = new Subject<string>();
 
   ngOnInit(): void {
     this.limit = this.StringConter.getLimit();
@@ -26,7 +26,7 @@ export class CounterComponent implements OnInit, OnDestroy {
     }
 
     //APENAS EXECUTA AS AÇÕES APÓS 300ms DO ULTIMO EVENTO
-    this.searchEntry.pipe(debounceTime(300)).subscribe((data) => {
+    this.inputEntry$.pipe(debounceTime(300)).subscribe((data) => {
       this.StringConter.setText(data);
 
       this.count = this.StringConter.countWords();
@@ -37,10 +37,10 @@ export class CounterComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.searchEntry.unsubscribe();
+    this.inputEntry$.unsubscribe();
   }
 
   handleChange(event: any): void {
-    this.searchEntry.next(event.target.value);
+    this.inputEntry$.next(event.target.value);
   }
 }
